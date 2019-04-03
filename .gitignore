@@ -1,0 +1,4 @@
+# don't show the executables
+*.out
+*.exe
+
