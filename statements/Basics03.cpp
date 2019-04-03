@@ -10,7 +10,7 @@ class A
 {
 public:
     A(): m_AData(new int()) { std::cout << "Calling A::A() " << std::endl; }
-    ~A()                    { std::cout << "Calling A::~A() " << std::endl; delete m_AData; }
+    virtual ~A()                     { std::cout << "Calling A::~A() " << std::endl; delete m_AData; }
 private:
     int* m_AData;
 };
@@ -31,3 +31,23 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
+/* 
+OUTPUT BEFORE:
+    Calling A::A()
+    Calling B::B()
+    Calling A::~A()
+    Calling A::A()
+    Calling B::B()
+    Calling B::~B()
+    Calling A::~A()
+
+OUTPUT AFTER:
+    Calling A::A()
+    Calling B::B()
+    Calling B::~B()
+    Calling A::~A()
+    Calling A::A()
+    Calling B::B()
+    Calling B::~B()
+    Calling A::~A()
+*/
