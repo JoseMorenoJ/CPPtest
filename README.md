@@ -42,5 +42,5 @@ Taking in account that any vector from X to Y (XY) is the same as Y-X. We can so
 2. AB + BP = AP
 
 Substituting AP in the 2nd equation:
-- AB + BP = t\*AB ==> BP = AB\*t-AB = AB(t-1)
-- BP = P-B ==> __P = AB(t-1) + B__
+- AB + BP = t\*AB --> BP = AB\*t-AB = AB(t-1)
+- BP = P-B --> __P = AB(t-1) + B__
