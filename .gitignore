@@ -2,3 +2,6 @@
 *.out
 *.exe
 
+# tgnore the vscode folder
+.vscode/
+
