@@ -32,3 +32,17 @@ As soon as I finish the Basic problems I will release another version called "Ba
 I plan to do a realease after I solve every different sets of problems.
 
 # Maths
+### Math03
+In this problem we start with the assumption that |AP| / |AB| = t.
+
+Also, we know that A, B and P are in the same line. We should be able to deduce from the representation of the points that: AB + BP = AP
+
+Taking in account that any vector from X to Y (XY) is the same as Y-X. We can solve the point P using the equations:
+1. AP = t*AB
+2. AB + BP = AP
+
+Substituting AP in the 2nd equation:
+- AB + BP = t*AB
+==> BP = AB*t-AB = AB(t-1)
+- BP = P-B
+==> *P = AB(t-1) + B*
