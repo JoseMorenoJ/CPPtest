@@ -12,6 +12,8 @@ class Ship
 
     void GetHit(unsigned damage)
     {
+        if(damage > m_Health)
+            m_Health = 0;
         m_Health -= damage;
         if (m_Health <= 0)
         {
