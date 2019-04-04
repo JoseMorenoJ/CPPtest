@@ -1,0 +1,7 @@
+# don't show the executables
+*.out
+*.exe
+
+# tgnore the vscode folder
+.vscode/
+
