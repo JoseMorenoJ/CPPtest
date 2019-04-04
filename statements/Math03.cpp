@@ -12,8 +12,11 @@ struct Vec3
 
 Vec3 linePos(const Vec3 &a, const Vec3 &b, float t)
 {
+    //After a few deductions: P = (B-A)/(t-1) + B
     Vec3 p = {1, 2, 3};
-    return p;
+    return Vec3 { (b.x-a.x)/(t-1) + b.x,
+                  (b.y-a.y)/(t-1) + b.y,
+                  (b.z-a.z)/(t-1) + b.z };
 }
 
 int main(int argc, char* argv[])
