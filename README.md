@@ -30,3 +30,5 @@ As soon as I finish the Basic problems I will release another version called "Ba
 
 ### To do
 I plan to do a realease after I solve every different sets of problems.
+
+# Maths

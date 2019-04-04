@@ -4,17 +4,26 @@
 */
 
 #include <iostream>
+#include <cmath>
 
 struct Vec3
 {
     float x, y, z;
 };
 
-const float MAX_DEGREES = 43.f;
+const double PI = 3.14159265358;
+
+//dot product of 2 vectors
+inline float operator*(const Vec3 &v, const Vec3 &u){ return v.x*u.x + v.y*u.y + v.z*u.z; }
+//module of 2 vectors
+inline float module(const Vec3 &v) { return sqrt(v.x*v.x + v.y*v.y + v.z*v.z); }
+
+const float MAX_DEGREES = 43.f; 
 
 bool WithinMaxAngle(const Vec3 &v1, const Vec3 &v2)
 {
-    return (bool) 3;
+    float alpha = acos (v1*v2 / (module(v1)*module(v2)) ); //alpha is in radians
+    return (alpha*180.f/PI) <= MAX_DEGREES;
 }
 
 int main(int argc, char* argv[])
