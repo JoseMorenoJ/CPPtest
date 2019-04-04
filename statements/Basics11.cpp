@@ -8,11 +8,13 @@
 class TypePrinter
 {
 public:
-    virtual void printClass() {} // Children need to override this so it prints the correct class name
+    virtual void printClass() = 0; // Children need to override this so it prints the correct class name
 };
 
 class A: public TypePrinter
 {
+public:
+    virtual void printClass(){ std::cout << "A::printClass" << std::endl;}
 };
 
 int main(int argc, char* argv[])
