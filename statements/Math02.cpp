@@ -4,15 +4,30 @@
 */
 
 #include <iostream>
+#include <cmath>
 
 struct Vec3
 {
     float x, y, z;
 };
 
+const double PI = 3.14159265358;
+
+//dot product of 2 vectors
+inline float operator*(const Vec3 &v, const Vec3 &u){ return v.x*u.x + v.y*u.y + v.z*u.z; }
+//module of 2 vectors
+inline float module(const Vec3 &v) { return sqrt(v.x*v.x + v.y*v.y + v.z*v.z); }
+//substraction of two points
+inline Vec3 operator-(const Vec3 &v, const Vec3 &u){ return Vec3 {v.x-u.x, v.y-u.y, v.z-u.z}; }
+
+inline Vec3 crossProd(const Vec3 &v, const Vec3 &u){ return Vec3{(v.y*u.z - v.z*u.y), (v.z*u.x - v.x*u.z), (v.x*u.y - v.y*u.x)}; }
+
 void CalcRotation(const Vec3 &o, const Vec3 &a, const Vec3 &b, Vec3 &axis, float &angle)
 {
+    angle = acos( (a-o)*(b-o) / (module(a-o)*module(b-o) )); //angle between OA and OB
 
+    //axis will be the vectorial product of OA x OB
+    axis = crossProd((a-o), (b-o));
 }
 
 int main(int argc, char* argv[])
