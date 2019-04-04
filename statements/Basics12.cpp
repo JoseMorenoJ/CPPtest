@@ -8,7 +8,7 @@
 #include <chrono>
 #include <thread>
 
-#define SQUARE(x) x * x
+#define SQUARE(x) (x) * (x)
 
 int slowThink()
 {
