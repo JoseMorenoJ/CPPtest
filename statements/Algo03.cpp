@@ -15,6 +15,9 @@ struct Vertex
     std::vector<Vertex*> m_adjacent;
 };
 
+//about the complexity: 
+//  this recursive approach will iterate for each adjacent vertex of every adjacent vertex.
+//  increasing at a rate of the square of vertexes
 void DFVisit(Vertex* v, std::vector<Vertex*>& result)
 {
     for (Vertex* vert : v->m_adjacent){
