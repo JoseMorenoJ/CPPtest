@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <vector>
+#include <set>
+#include <algorithm>
 
 struct Vertex
 {
@@ -15,6 +17,12 @@ struct Vertex
 
 void DFVisit(Vertex* v, std::vector<Vertex*>& result)
 {
+    for (Vertex* vert : v->m_adjacent){
+        if(std::find(result.begin(), result.end(), vert) == result.end()){
+            result.push_back(vert);
+            DFVisit(vert, result);
+        }
+    }
 }
 
 int main(int argc, char* argv[])
