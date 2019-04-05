@@ -6,10 +6,16 @@
 
 #include <iostream>
 #include <vector>
+#include <random>
 
 void removeK(std::vector<int>& v, unsigned k)
 {
-    // This vector has it coming...
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    for(int i=0; i<k; i++){
+        std::uniform_int_distribution<int> randIndex(0, v.size() - 1);
+        v.erase(v.begin()+randIndex(rng));
+    }
 }
 
 int main(int argc, char* argv[])
