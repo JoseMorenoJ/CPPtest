@@ -1,12 +1,12 @@
 # What is CPPtest?
 A C++ knowledge test given to me from a company during the selection procces for a C++ developer position.
 
-When I received it I didn't have much experience with C++ or as a developer, moreover, they rejected me. I was supposed to finish the test in 6 hours. Well, I had 6 hours to do as much as I could but, still today, I am not sure if they were expecting me (or the selected candidate) to finish all the exercises.
+When I received it I didn't have much experience with C++ or as a developer, moreover, they rejected me. I had 6 hours to do as much as I could but, still today, I am not sure if they were expecting me (or the selected candidate) to finish all the exercises.
 
 ## What to find in this repo?
 When I did the test, I failed big time. But I also learnt about what was expected from me as a candidate. In this repo I will repeat the test, exercise by exercise, explaining the solutions the best I can. Maybe even showing alternative solutions.
 - The solutions for the problems
-- The explanation for each soution
+- The explanation for each solution
 - Additional links to external info
 
 ## How can you contribute?
@@ -19,11 +19,11 @@ Actually, as I still consider myself new in development, I would like to encoura
 We will use tags to set the different milestones in the proyect.
 
 ### Branches
-I have the intention to use one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
-  - basics
-  - maths
-  - algo
-  - advanced
+There is one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
+  - basics: to work in the _Basics_ problems solutions.
+  - maths: to work in the _Math_ problems solutions.
+  - algo: to work in the _Algo_ problems solutions.
+  - advanced: to work in the _Advanced_ problems solutions.
 
 All the branches will merge with master once they are solved. 
 
@@ -31,9 +31,13 @@ All the branches will merge with master once they are solved.
 #### v.0 : Statements
 This release contains the Statements as they were, before solving them. Although the changes in the general structure are added also to this version and it will be updated with the changes as we develop the other branches.
 
+#### Next releases
+There will be a release for every kind of problem. Each release will also have the content of the previous versions.
+
 # In Progress
-- Right now, we are structuring the README so it will be easy to navigate through the different problems and solutions.
-- Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution.
+- Right now, we are structuring the README file so it will be easy to navigate through the different problems and solutions.
+- Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution. This is, having **both** the statement and the solution. 
+  - Maybe we can just call a link to the _diff_ utility between versions.
 
 # Solutions
 ## Index
