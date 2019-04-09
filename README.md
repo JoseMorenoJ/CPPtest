@@ -29,7 +29,7 @@ All the branches will merge with master once they are solved.
 
 ### Releases
 #### v.0 : Statements
-This extract the code from "Statements" version and you will get only that, the statements. Not a single problem solved.
+This release contains the Statements as they were, before solving them. Although the changes in the general structure are added also to this version and it will be updated with the changes as we develop the other branches.
 
 # In Progress
 - Right now, we are structuring the README so it will be easy to navigate through the different problems and solutions.
