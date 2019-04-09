@@ -8,6 +8,8 @@
 int main(int argc, char* argv[])
 {
     int c = 0;
+
+    //it is executing "c < 5" and then evaluating "++c" which will always be true.
     while (c < 5, ++c)
         std::cout << c << std::endl;
 
