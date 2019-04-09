@@ -30,3 +30,8 @@ As soon as I finish the Basic problems I will release another version called "Ba
 
 ### To do
 I plan to do a realease after I solve every different sets of problems.
+
+# Advanced
+### Advanced 02
+About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
+- Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
