@@ -27,12 +27,16 @@ private:
     float m_x, m_y, m_z;
 };
 
+template<> Vec3 add(Vec3 a, Vec3 b){
+    return a.add(b);
+}
+
 int main(int argc, char* argv[])
 {
     Vec3 a(1, 2, 3), b(4, 5, 6);
     Vec3 c;
     // Uncomment the following line to test your solution
-    // c = add<Vec3>(a, b); 
+    c = add<Vec3>(a, b); 
     std::cout << c.x() << " " << c.y() << " " << c.z() << std::endl;
 
 	return 0;
