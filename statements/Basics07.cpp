@@ -13,12 +13,19 @@ class Flags
 public:
     static const int MAX_FLAGS = 32;
 
-    Flags() { for (int i = 0; i < MAX_FLAGS; ++i) m_flags[i] = false; }
+    Flags():_flags(0) {}
 
-    bool getFlag(int i)         { return m_flags[i]; }
-    void setFlag(int i, bool v) { m_flags[i] = v; }
+    bool getFlag(int i) { 
+        unsigned int mask = (1 << i); //a '1' bit in the ith position
+        return mask & _flags;
+    }
+    void setFlag(int i, bool v) { 
+        std::cout << i << std::endl;
+        unsigned int mask = (1 << i);
+        _flags = _flags | mask; //add the '1' of the mask
+        }
 private:
-    bool m_flags[MAX_FLAGS];
+    unsigned int _flags; //each bit is a flag
 };
 
 

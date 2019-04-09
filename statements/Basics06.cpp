@@ -7,7 +7,7 @@
 
 void printValuePlus2(int *p)
 {
-    std::cout << p + 2 << std::endl;
+    std::cout << *p + 2 << std::endl;
 }
 
 int main(int argc, char* argv[])

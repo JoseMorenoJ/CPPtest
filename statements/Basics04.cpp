@@ -18,7 +18,9 @@ int g(int a)
 
 int main(int argc, char* argv[])
 {
+    // i is getting the reference of a variable out of scope.
     int &i = func(5);
+    // Therefor, this might print anything.
     std::cout << i << " " << g(3) << std::endl;
 
 	return 0;

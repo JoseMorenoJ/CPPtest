@@ -4,6 +4,7 @@
 */
 
 #include <iostream>
+#include <functional>
 
 int mulBy2(float a)
 {
@@ -12,9 +13,9 @@ int mulBy2(float a)
 
 int main(int argc, char* argv[])
 {
-    auto f = mulBy2;
+    int(*f) (float) = mulBy2;
     float c = 3.f;
-    auto g = [=](float a) { return a * c; };
+    std::function<float(float)> g ( [=](float a) { return a * c; });
     std::cout << f(2.0f) << " " << g(2.0f) << std::endl;
 
 	return 0;
