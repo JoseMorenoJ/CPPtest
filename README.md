@@ -474,3 +474,11 @@ I decided to write different structs. A rotation matrix (X axis) and a symetry m
 About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
 - Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
 
+### Advanced 04
+Comma separator. The comma operator (,) is used to separate two or more expressions that are included where only one expression is expected. When the set of expressions has to be evaluated for a value, only the right-most expression is considered.
+
+For example, the following code:
+ 
+a = (b=3, b+2);
+
+would first assign the value 3 to b, and then assign b+2 to variable a. So, at the end, variable a would contain the value 5 while variable b would contain value 3.
