@@ -46,10 +46,10 @@ Organization
         Advanced
 # Solutions
 ## Index
-    1. [Basics](#basics)
-    2. [Maths](#maths)
-    3. [Algorithms](#algorithms)
-    4. [Advanced](#advanced)
+   1. [Basics](#basics)
+   2. [Maths](#maths)
+   3. [Algorithms](#algorithms)
+   4. [Advanced](#advanced)
 
 ## Basics
 
