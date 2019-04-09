@@ -600,5 +600,11 @@ In order to get stop the recursive call, we define that:
 Hopefully that makes sense. If it is not clear it always helps to draw a sketch :D
 
 
+# Advanced
+### Advanced 02
+About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
+- Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
+
+
 _The end..._
 ----------------------------------------------------------------------
