@@ -605,7 +605,6 @@ Hopefully that makes sense. If it is not clear it always helps to draw a sketch 
 About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
 - Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
 
-
 ### Advanced 04
 Comma separator. The comma operator (,) is used to separate two or more expressions that are included where only one expression is expected. When the set of expressions has to be evaluated for a value, only the right-most expression is considered.
 
