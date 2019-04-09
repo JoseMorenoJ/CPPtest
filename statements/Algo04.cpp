@@ -17,7 +17,17 @@ struct BSTNode
 
 BSTNode *BSTMerge(BSTNode *tree1, BSTNode *tree2)
 {
-    // This doesn't seem to really work
+    //Recurring call --> end condition:
+    if(!tree1) return tree2;
+    if(!tree2) return tree1;
+
+    //Update the data:
+    tree1->m_data += tree2->m_data;
+
+    //Continue merging left and right side
+    tree1->m_left = BSTMerge(tree1->m_left, tree2->m_left);
+    tree1->m_right = BSTMerge(tree1->m_right, tree2->m_right);
+
     return tree1;
 }
 
@@ -55,11 +65,11 @@ void BSTPrint(BSTNode *node)
     BSTPrint(node->m_right);
 }
 
-void main(int argc, char* argv[])
+int main(int argc, char* argv[])
 {
     BSTNode *tree1 = BSTGenerate(20);
     BSTNode *tree2 = BSTGenerate(15);
-
+   
     BSTNode *merged = BSTMerge(tree1, tree2);
 
     BSTPrint(merged);
