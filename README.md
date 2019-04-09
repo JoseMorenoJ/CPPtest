@@ -16,17 +16,45 @@ Actually, as I still consider myself new in development, I would like to encoura
 - Correct any typo 
 
 # Organization
-I will try to use tags to set the different milestones in the proyect.
+We will use tags to set the different milestones in the proyect.
 
 ### Branches
 I have the intention to use one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
+    - basics
+    - maths
+    - algo
+    - advanced
+
+All the branches will merge with master once they are solved. 
 
 ### Releases
-#### Statements
+#### v.0 : Statements
 This extract the code from "Statements" version and you will get only that, the statements. Not a single problem solved.
 
-#### Basics (in progress)
-As soon as I finish the Basic problems I will release another version called "Basics".
+# In Progress
+Right now, we are structuring the README so it will be easy to navigate through the different problems and solutions.
+Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution.
+We have to add links to the README.md file so you can follow the different kinds of problems.
 
-### To do
-I plan to do a realease after I solve every different sets of problems.
+Organization
+    Branches
+    Releases: tags
+        Statements
+        Basics
+        Maths
+        Algorithms
+        Advanced
+# Solutions
+## Index
+    1. [Basics](#basics)
+    2. [Maths](#maths)
+    3. [Algorithms](#algorithms)
+    4. [Advanced](#advanced)
+
+## Basics
+
+## Maths
+
+## Algorithms
+
+## Advanced
