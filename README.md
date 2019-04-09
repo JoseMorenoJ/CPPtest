@@ -20,10 +20,10 @@ We will use tags to set the different milestones in the proyect.
 
 ### Branches
 I have the intention to use one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
-    - basics
-    - maths
-    - algo
-    - advanced
+  - basics
+  - maths
+  - algo
+  - advanced
 
 All the branches will merge with master once they are solved. 
 
@@ -32,18 +32,9 @@ All the branches will merge with master once they are solved.
 This extract the code from "Statements" version and you will get only that, the statements. Not a single problem solved.
 
 # In Progress
-Right now, we are structuring the README so it will be easy to navigate through the different problems and solutions.
-Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution.
-We have to add links to the README.md file so you can follow the different kinds of problems.
+- Right now, we are structuring the README so it will be easy to navigate through the different problems and solutions.
+- Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution.
 
-Organization
-    Branches
-    Releases: tags
-        Statements
-        Basics
-        Maths
-        Algorithms
-        Advanced
 # Solutions
 ## Index
    1. [Basics](#basics)
