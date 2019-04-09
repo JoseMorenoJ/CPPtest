@@ -468,3 +468,9 @@ _Add comments about the constraints and advantages of each the new types, if any
 I have to admit that I am not sure of what is expected to answer in this problem. It asks you to write transforms in 3D space, [which we can see here what the are](https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_3D_computer_graphics), but I am not sure on the format.
 
 I decided to write different structs. A rotation matrix (X axis) and a symetry matrix. I guess you could write different matrixes depending on the rotation axis or even you could write the rotation matrix in 3 axes (the Euler angles) but it seemed like a copy-paste activity without much to learn from it.
+
+# Advanced
+### Advanced 02
+About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
+- Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
+
