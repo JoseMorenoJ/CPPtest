@@ -18,7 +18,7 @@ Actually, as I still consider myself new in development, I would like to encoura
 # Organization
 We will use tags to set the different milestones in the proyect.
 
-### Branches
+## Branches
 There is one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
   - basics: to work in the _Basics_ problems solutions.
   - maths: to work in the _Math_ problems solutions.
@@ -27,11 +27,18 @@ There is one branch for each kind of problem (Basic, Algorithms, Maths and Advan
 
 All the branches will merge with master once they are solved. 
 
-### Releases
-#### v.0 : Statements
-This release contains the Statements as they were, before solving them. Although the changes in the general structure are added also to this version and it will be updated with the changes as we develop the other branches.
+## Releases
+### v.0 : Statements
+This release contains the Statements as they were, before solving them. Although the changes in the general structure are added also to this version and it will be updated with the changes as we develop the other branches. 
 
-#### Next releases
+Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.0-Statements.zip).
+
+### v.1 : Basics
+This release contains the solution for the "Basics" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
+
+Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.1-Basics.zip).
+
+### Next releases
 There will be a release for every kind of problem. Each release will also have the content of the previous versions.
 
 # In Progress
@@ -40,7 +47,7 @@ There will be a release for every kind of problem. Each release will also have t
   - Maybe we can just call a link to the _diff_ utility between versions.
 
 # Solutions
-In this section you will find the explanations to the solutions, not the code. We recommend to have the code open in another editor/window to follow the solutions easily.
+In this section you will find the explanations to the solutions, not the code. We recommend **to have the code open** in another editor/window to follow the solutions easily.
 ## Index
    1. [Basics](#basics)
        - [Basics 01](#basics-01): Function template.
@@ -50,7 +57,7 @@ In this section you will find the explanations to the solutions, not the code. W
        - [Basics 05](#basics-05): C++ casting.
        - [Basics 06](#basics-06): Pointer value.
        - [Basics 07](#basics-07): Bit operations.
-       - [Basics 08](#basics-08): && and ||.
+       - [Basics 08](#basics-08): AND and OR.
        - [Basics 09](#basics-09): Function pointer types.
        - [Basics 10](#basics-10): Rule of 3 and Rule of 5.
        - [Basics 11](#basics-11): Pure virtual class.
