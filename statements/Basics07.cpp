@@ -19,11 +19,16 @@ public:
         unsigned int mask = (1 << i); //a '1' bit in the ith position
         return mask & _flags;
     }
-    void setFlag(int i, bool v) { 
-        std::cout << i << std::endl;
-        unsigned int mask = (1 << i);
-        _flags = _flags | mask; //add the '1' of the mask
+    void setFlag(int i, bool v) {
+        unsigned int mask = (1 << i); 
+        std::cout << i << std::endl; //debug
+        if (v){
+            _flags = _flags | mask; //add the '1' of the mask
         }
+        else{
+            _flags = _flags & ~mask; //reset the '1' of the mask
+        }
+    }
 private:
     unsigned int _flags; //each bit is a flag
 };
