@@ -70,7 +70,7 @@ In this section you will find the explanations to the solutions, not the code. W
 
 ## Basics
 ### Basics 01
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics01.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics01.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics01.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Unify the definitions of the two sumArray functions into one._
@@ -86,7 +86,7 @@ T sumArray(T *a, int count) {...}
 We must leave `count` as an `int` because it is the size of the array which is always going to be an integer value independently of the array type.
 
 ### Basics 02
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics02.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics02.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics02.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Write code that will allocate and then delete an array of 10 arrays of 8 ints each._
@@ -112,7 +112,7 @@ We are using the [fill constructor](http://www.cplusplus.com/reference/vector/ve
 As we didn't specify anything in the vector of size 8, it will fill the vector with the value 0.
 
 ### Basics 03
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics03.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics03.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics03.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Fix the problem with the code below._
@@ -129,7 +129,7 @@ The problem here, is that we have an object of the class B in the variable `some
 Specifying the `virtual` in the destructor of `~A()` we make sure that it calls the destructor of `~B()` aswell.
 
 ### Basics 04
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics04.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics04.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics04.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Write a comment explaining the problem with the code below._
@@ -139,7 +139,7 @@ Well, that problem with the code, as we understand it, is that we define `i` as 
 Thus, we **cannot be sure** that the value stored is going to be the same.
 
 ### Basics 05
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics05.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics05.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics05.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Add code that will make the template function add() work for objects of class Vec3._ 
@@ -162,7 +162,7 @@ Keeping those definitions in mind:
 - line 44 `reinterpret_cast` and `const_cast`: we want to cast a `const` variable so we need the `const_cast`. After that, we want to use it as if it was a pointer to an int. We can only do this with the `reinterpret_cast` because there is no relationship between `int` and `A`.
 
 ### Basics 06
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics06.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics06.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics06.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Fix the problem with the code below._
@@ -172,7 +172,7 @@ The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't t
 The solution is as simple as dereferencing the pointer in the `std::cout` statement.
 
 ### Basics 07
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics07.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics07.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics07.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Rewrite the implementation of the class Flags so it is more memory efficient for the given value of `MAX_FLAGS`._
@@ -199,7 +199,7 @@ As a downside, when the number of bits is not exactly the number of flags, this 
 Also, this implementation will be system dependent since not all the computers have the same size for all the types.
 
 ### Basics 08
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics08.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics08.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics08.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Write a comment explaining the output of the code below._
@@ -218,7 +218,7 @@ The `&&` operand, will return `true` **only if both sides** are `true`. So, once
 Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the right side, `func1()`, is `true` it returns `true` without checking the right side.
 
 ### Basics 09
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics09.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics09.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics09.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _In the code below change the auto in front of f and g to the most specific possible concrete types._
@@ -236,7 +236,7 @@ Usually we would leave the auto like that but in order to find an alternative we
 On this case, we might prefer using the `auto` instead but we also propose to use the `std::function` class trying to go a step further on the solution.
 
 ### Basics 10
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics10.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics10.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics10.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Fix the problem with the class in the use case below._
@@ -288,7 +288,7 @@ FunArray& FunArray::operator=(FunArray &&f){
 We recommend to check the cppreference.com website to understand in more detail how the move operations are performed.
 
 ### Basics 11
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics11.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics11.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics11.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Change the definition of class TypePrinter in such a way that it would be impossible for a descendant class to not define the method printClass._
@@ -298,7 +298,7 @@ That is the definition a **_pure virtual method_** and in order to make `printCl
 Being pure virtual, the compiler will not allow to not be redefined in a derived class. Thus, it will not use the definition from the base class (because there is no such definition);
 
 ### Basics 12
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics12.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics12.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics12.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Fix the macro SQUARE to return the intended result in all cases._
@@ -315,7 +315,7 @@ In order to make sure that it solves first the sum we have to add parenthesis to
 ```SQUARE(x) (x) * (x)```
 
 ### Basics 13
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics13.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics13.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics13.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _You are working on a Space Simulator game. For some reason, ships in your game are sometimes failing to die (but sometimes they work)._
@@ -331,7 +331,7 @@ Thus, we can also modify the if statement to check only `(m_Health == 0)` since 
 As an alternative, we can change the type of the `m_Health` and `damage` to be an int.
 
 ### Basics 14
-[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics14.cpp) _(_**_ctrl + click_** _to open new in tab)_\
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics14.cpp)/
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics14.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
 _Write a comment to explain the output._
