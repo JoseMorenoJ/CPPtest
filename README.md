@@ -70,6 +70,9 @@ In this section you will find the explanations to the solutions, not the code. W
 
 ## Basics
 ### Basics 01
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/.Basics01.cpp) _(_**_ctrl + click_** _to open new in tab)_
+[solved](https://josemorenoj.github.io/CPPtest/statements/Basics01.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
 _Unify the definitions of the two sumArray functions into one._
 
 The only way of unify two definitions of a function (an overloaded function) is to abstract them in a template function.
