@@ -42,9 +42,10 @@ Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/ar
 There will be a release for every kind of problem. Each release will also have the content of the previous versions.
 
 # In Progress
-- Right now, we are structuring the README file so it will be easy to navigate through the different problems and solutions.
-- Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution. This is, having **both** the statement and the solution. 
-  - Maybe we can just call a link to the _diff_ utility between versions.
+This is what we are doing now:
+   - Review the explanations for the Basic problems to be ready to merge the Math problems.
+   - Review the code of the Math solutions: Take another look on the last of the problems.
+   - Finish solving the other branches. Advanced and Algorithms.
 
 # Solutions
 In this section you will find the explanations to the solutions, not the code. We recommend **to have the code open** in another editor/window to follow the solutions easily.
