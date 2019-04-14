@@ -4,6 +4,7 @@ A C++ knowledge test given to me from a company during the selection procces for
 When I received it I didn't have much experience with C++ or as a developer, moreover, they rejected me. I had 6 hours to do as much as I could but, still today, I am not sure if they were expecting me (or the selected candidate) to finish all the exercises.
 
 ## What to find in this repo?
+Go straight to the [explanation](solutions) of the problems.
 When I did the test, I failed big time. But I also learnt about what was expected from me as a candidate. In this repo I will repeat the test, exercise by exercise, explaining the solutions the best I can. Maybe even showing alternative solutions.
 - The solutions for the problems
 - The explanation for each solution
@@ -19,13 +20,13 @@ Actually, as I still consider myself new in development, I would like to encoura
 We will use tags to set the different milestones in the proyect.
 
 ## Branches
-There is one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
-  - basics: to work in the _Basics_ problems solutions.
-  - maths: to work in the _Math_ problems solutions.
-  - algo: to work in the _Algo_ problems solutions.
-  - advanced: to work in the _Advanced_ problems solutions.
+The work in the code will be done in the specific branches:
+  - **basic**: to work in the _Basics_ problems solutions.
+  - **math**: to work in the _Math_ problems solutions.
+  - **algo**: to work in the _Algo_ problems solutions.
+  - **advanced**: to work in the _Advanced_ problems solutions.
 
-All the branches will merge with master once they are solved. 
+All the branches will merge with **master** once they are solved. Also, the explanations are in the README file which will be edited from the master branch.
 
 ## Releases
 ### v.0 : Statements
