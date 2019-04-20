@@ -77,7 +77,7 @@ In this section you will find the explanations to the solutions, not the code. W
 
 _Unify the definitions of the two sumArray functions into one._
 
-The only way of unify two definitions of a function (an overloaded function) is to abstract them in a template function.
+The best way of unify two definitions of a function in c++ is to abstract them in a template function. Even more when one of the function is an overloaded version of the other.
 
 In this case:
 ```
