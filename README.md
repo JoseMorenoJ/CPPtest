@@ -94,7 +94,9 @@ We must leave `count` as an `int` because it is the size of the array which is a
 _Write code that will allocate and then delete an array of 10 arrays of 8 ints each._
 
 There are different ways of doing this, finally I decided for allocate an array of 10 pointers to int:
-```int **array = new int*[10];``` 
+```
+int **array = new int*[10];
+``` 
 and then we assign the address of an array of 8 ints to every element:
 ```
 for (int i=0; i<10; i++)
@@ -107,7 +109,9 @@ Note that we need to use the `delete[]` operand to do this.
 
 #### Alternative
 We can use the `std::vector` instead of plain arrays. We can declare a vector of vectors of ints like this:
-```std::vector < std::vector<int> > array(10, std::vector<int>(8))```
+```
+std::vector < std::vector<int> > array(10, std::vector<int>(8))
+```
 
 We are using the [fill constructor](http://www.cplusplus.com/reference/vector/vector/vector/) to initialize it with 10 elements, each of those, initialized as a vector of int of 8 elements.
 
@@ -123,7 +127,9 @@ _Write a comment to explain the output._
 Even though the "fix" is just adding `virtual` to the destructor of the class A, it is important to understand why would we want that to be it.
 
 When the class B is created, it calls the constructor `A()` before calling its own constructor. You can see it _as if_ it was specified in the initialization area of `B()`: 
-```B(): A(), m_BData(new int()) { ... }```
+```
+B(): A(), m_BData(new int()) { ... }
+```
 In the same way, the destructor `~A()` is going to be called if the destructor `~B()` is called. 
 
 The problem here, is that we have an object of the class B in the variable `someA`, which is a pointer of A (`A*`). When we call `delete someA` the compiler will **not call** the destructor `~B()` (and then `~A()`), but `~A()` straight away.
