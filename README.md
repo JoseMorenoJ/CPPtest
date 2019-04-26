@@ -49,7 +49,10 @@ This is what we are doing now:
    - Finish solving the other branches. Advanced and Algorithms.
 
 # Solutions
-In this section you will find the explanations to the solutions, not the code. We recommend **to have the code open** in another editor/window to follow the solutions easily.
+In this section you will find the explanations to the solutions. You will also have a link to the code before and after solving it. We recommend **to have the code open** in another editor/window to follow the solutions easily.
+
+As always when learning something, it is better if you try it on your own first.
+
 ## Index
    1. [Basics](#basics)
        - [Basics 01](#basics-01): Function template.
@@ -115,7 +118,7 @@ std::vector < std::vector<int> > array(10, std::vector<int>(8))
 
 We are using the [fill constructor](http://www.cplusplus.com/reference/vector/vector/vector/) to initialize it with 10 elements, each of those, initialized as a vector of int of 8 elements.
 
-As we didn't specify anything in the vector of size 8, it will fill the vector with the value 0.
+As we didn't specify any value in the vector of size 8, it will initialize each element with 0.
 
 ### Basics 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics03.cpp) /
@@ -163,7 +166,7 @@ From [cplusplus.com](http://www.cplusplus.com/doc/tutorial/typecasting/):
 >`const_cast` manipulates the constness of the object pointed by a pointer, either to be set or to be removed. For example, in order to pass a const pointer to a function that expects a non-const argument.
 
 Keeping those definitions in mind:
-- line 30, `dynamic_cast`:  `logClass()` receives a pointer to A but then uses it as a pointer to B. Like this we make sure that we have pointer to B or not.
+- line 30, `dynamic_cast`:  `logClass()` receives a pointer to A but then uses it as a pointer to B. We have to make sure wether we have pointer to B or not.
 - line 41 `const_cast`: in order to use a `const` vairable in a `non-const` way.
 - line 42 `static_cast`: we want to use `B::baz()`, and `pb` is `A*` type. **We know** that `pb` is obtained as `new B` and that is why we can use this kind of cast.
 - line 42 `dynamic_cast` and `const_cast`: to make sure that `pa` is treated as a `B*` if it really is an object of type B. Also, we need to make it `non-const` to be able to cast it.
@@ -175,7 +178,7 @@ Keeping those definitions in mind:
 
 _Fix the problem with the code below._
 
-The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't treat it as a pointer but as an `int`. Thus, it prints out the address (which is the value of the pointer) +2.
+The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't treat it as a pointer but as an `int`. Thus, it adds 2 to the address (which is the value of a pointer).
 
 The solution is as simple as dereferencing the pointer in the `std::cout` statement.
 
@@ -190,12 +193,12 @@ The value of `MAX_FLAGS` is 32 which is the number of bits that an integer has. 
 
 This way, `getFlag(int i)` will now return the value of the bit in the _ith_ position. We achieve that using the bit shift operator `<<` to move a '1' to the bit in the _i_ position in our `mask` variable. The rest of the bits will be '0'. The return value, `return mask & _flags;`, will be `true` only if the bit in the _i_ position of our `_flags` variable is also a '1'.
 
-Likewise, we modify `setFlag(int i, bool v);` in a similar way. We use a `mask` with all '0' but the _ith_ position, that is a '1'. Then, depending on the value of `bool v`, we set the _ith_ flag to true: 
+Likewise, we modify `setFlag(int i, bool v);` in a similar way. We use a `mask` with all '0' but a '1' in the _ith_ position. Then, depending on the value of `bool v`, we set the _ith_ flag to true: 
 ```_flags = _flags | mask;```
 or we set the _ith_ flag to false: 
 ```_flags = _flags & ~mask;```
 
-Take in account that `~mask` is the inverse of `mask`. All '1' but a '0' in the _ith_ position.
+Take in account that `~mask` (NOT mask) is the inverse of `mask`. All '1' but a '0' in the _ith_ position.
 
 
 _Document any limitations this imposes on other possible `MAX_FLAGS` values._
@@ -223,7 +226,7 @@ As we can see, despite having 4 calls to the functions in the if statements, the
 
 The `&&` operand, will return `true` **only if both sides** are `true`. So, once it knows that the left side is already `false`, it returns `false` without checking the right side. Thus, we only execute the call to `func0()` in the first if statement.
 
-Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the right side, `func1()`, is `true` it returns `true` without checking the right side.
+Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the left side, `func1()`, is `true` it returns `true` without checking the right side.
 
 ### Basics 09
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics09.cpp) /
@@ -293,7 +296,7 @@ FunArray& FunArray::operator=(FunArray &&f){
 }
 ```
 
-We recommend to check the cppreference.com website to understand in more detail how the move operations are performed.
+We recommend to check the references above to understand in more detail how the move operations are performed.
 
 ### Basics 11
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics11.cpp) /
@@ -320,7 +323,8 @@ slowThink() + 8 * slowThink() + 8
 ```
 We can see that it will do the multiplication before the sum. We will obtain `(42 + (8*42) + 8)`, instead of the square of '42+8'.
 In order to make sure that it solves first the sum we have to add parenthesis to the macro:
-```SQUARE(x) (x) * (x)```
+
+```#define SQUARE(x) (x) * (x)```
 
 ### Basics 13
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics13.cpp) /
