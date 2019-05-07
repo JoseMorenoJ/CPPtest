@@ -1,3 +1,7 @@
+# DS_STORE appeared
+**/.DS_STORE
+
+
 # don't show the executables
 *.out
 *.exe

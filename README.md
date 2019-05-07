@@ -4,6 +4,7 @@ A C++ knowledge test given to me from a company during the selection procces for
 When I received it I didn't have much experience with C++ or as a developer, moreover, they rejected me. I had 6 hours to do as much as I could but, still today, I am not sure if they were expecting me (or the selected candidate) to finish all the exercises.
 
 ## What to find in this repo?
+Go straight to the [explanation](#solutions) of the problems.
 When I did the test, I failed big time. But I also learnt about what was expected from me as a candidate. In this repo I will repeat the test, exercise by exercise, explaining the solutions the best I can. Maybe even showing alternative solutions.
 - The solutions for the problems
 - The explanation for each solution
@@ -19,13 +20,13 @@ Actually, as I still consider myself new in development, I would like to encoura
 We will use tags to set the different milestones in the proyect.
 
 ## Branches
-There is one branch for each kind of problem (Basic, Algorithms, Maths and Advanced) to be able to isolate the different sets of porblems.
-  - basics: to work in the _Basics_ problems solutions.
-  - maths: to work in the _Math_ problems solutions.
-  - algo: to work in the _Algo_ problems solutions.
-  - advanced: to work in the _Advanced_ problems solutions.
+The work in the code will be done in the specific branches:
+  - **basic**: to work in the _Basics_ problems solutions.
+  - **math**: to work in the _Math_ problems solutions.
+  - **algo**: to work in the _Algo_ problems solutions.
+  - **advanced**: to work in the _Advanced_ problems solutions.
 
-All the branches will merge with master once they are solved. 
+All the branches will merge with **master** once they are solved. Also, the explanations are in the README file which will be edited from the master branch.
 
 ## Releases
 ### v.0 : Statements
@@ -42,12 +43,16 @@ Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/ar
 There will be a release for every kind of problem. Each release will also have the content of the previous versions.
 
 # In Progress
-- Right now, we are structuring the README file so it will be easy to navigate through the different problems and solutions.
-- Considering to keep a copy of the Statements as part of the code to be able to compare when presenting the solution. This is, having **both** the statement and the solution. 
-  - Maybe we can just call a link to the _diff_ utility between versions.
+This is what we are doing now:
+   - Review the explanations for the Basic problems to be ready to merge the Math problems.
+   - Review the code of the Math solutions: Take another look on the last of the problems.
+   - Finish solving the other branches. Advanced and Algorithms.
 
 # Solutions
-In this section you will find the explanations to the solutions, not the code. We recommend **to have the code open** in another editor/window to follow the solutions easily.
+In this section you will find the explanations to the solutions. You will also have a link to the code before and after solving it. We recommend **to have the code open** in another editor/window to follow the solutions easily.
+
+As always when learning something, it is better if you try it on your own first.
+
 ## Index
    1. [Basics](#basics)
        - [Basics 01](#basics-01): Function template.
@@ -75,7 +80,7 @@ In this section you will find the explanations to the solutions, not the code. W
 
 _Unify the definitions of the two sumArray functions into one._
 
-The only way of unify two definitions of a function (an overloaded function) is to abstract them in a template function.
+The best way of unify two definitions of a function in c++ is to abstract them in a template function. Even more when one of the function is an overloaded version of the other.
 
 In this case:
 ```
@@ -92,7 +97,9 @@ We must leave `count` as an `int` because it is the size of the array which is a
 _Write code that will allocate and then delete an array of 10 arrays of 8 ints each._
 
 There are different ways of doing this, finally I decided for allocate an array of 10 pointers to int:
-```int **array = new int*[10];``` 
+```
+int **array = new int*[10];
+``` 
 and then we assign the address of an array of 8 ints to every element:
 ```
 for (int i=0; i<10; i++)
@@ -105,11 +112,13 @@ Note that we need to use the `delete[]` operand to do this.
 
 #### Alternative
 We can use the `std::vector` instead of plain arrays. We can declare a vector of vectors of ints like this:
-```std::vector < std::vector<int> > array(10, std::vector<int>(8))```
+```
+std::vector < std::vector<int> > array(10, std::vector<int>(8))
+```
 
 We are using the [fill constructor](http://www.cplusplus.com/reference/vector/vector/vector/) to initialize it with 10 elements, each of those, initialized as a vector of int of 8 elements.
 
-As we didn't specify anything in the vector of size 8, it will fill the vector with the value 0.
+As we didn't specify any value in the vector of size 8, it will initialize each element with 0.
 
 ### Basics 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics03.cpp) /
@@ -121,7 +130,9 @@ _Write a comment to explain the output._
 Even though the "fix" is just adding `virtual` to the destructor of the class A, it is important to understand why would we want that to be it.
 
 When the class B is created, it calls the constructor `A()` before calling its own constructor. You can see it _as if_ it was specified in the initialization area of `B()`: 
-```B(): A(), m_BData(new int()) { ... }```
+```
+B(): A(), m_BData(new int()) { ... }
+```
 In the same way, the destructor `~A()` is going to be called if the destructor `~B()` is called. 
 
 The problem here, is that we have an object of the class B in the variable `someA`, which is a pointer of A (`A*`). When we call `delete someA` the compiler will **not call** the destructor `~B()` (and then `~A()`), but `~A()` straight away.
@@ -155,7 +166,7 @@ From [cplusplus.com](http://www.cplusplus.com/doc/tutorial/typecasting/):
 >`const_cast` manipulates the constness of the object pointed by a pointer, either to be set or to be removed. For example, in order to pass a const pointer to a function that expects a non-const argument.
 
 Keeping those definitions in mind:
-- line 30, `dynamic_cast`:  `logClass()` receives a pointer to A but then uses it as a pointer to B. Like this we make sure that we have pointer to B or not.
+- line 30, `dynamic_cast`:  `logClass()` receives a pointer to A but then uses it as a pointer to B. We have to make sure wether we have pointer to B or not.
 - line 41 `const_cast`: in order to use a `const` vairable in a `non-const` way.
 - line 42 `static_cast`: we want to use `B::baz()`, and `pb` is `A*` type. **We know** that `pb` is obtained as `new B` and that is why we can use this kind of cast.
 - line 42 `dynamic_cast` and `const_cast`: to make sure that `pa` is treated as a `B*` if it really is an object of type B. Also, we need to make it `non-const` to be able to cast it.
@@ -167,7 +178,7 @@ Keeping those definitions in mind:
 
 _Fix the problem with the code below._
 
-The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't treat it as a pointer but as an `int`. Thus, it prints out the address (which is the value of the pointer) +2.
+The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't treat it as a pointer but as an `int`. Thus, it adds 2 to the address (which is the value of a pointer).
 
 The solution is as simple as dereferencing the pointer in the `std::cout` statement.
 
@@ -182,12 +193,12 @@ The value of `MAX_FLAGS` is 32 which is the number of bits that an integer has. 
 
 This way, `getFlag(int i)` will now return the value of the bit in the _ith_ position. We achieve that using the bit shift operator `<<` to move a '1' to the bit in the _i_ position in our `mask` variable. The rest of the bits will be '0'. The return value, `return mask & _flags;`, will be `true` only if the bit in the _i_ position of our `_flags` variable is also a '1'.
 
-Likewise, we modify `setFlag(int i, bool v);` in a similar way. We use a `mask` with all '0' but the _ith_ position, that is a '1'. Then, depending on the value of `bool v`, we set the _ith_ flag to true: 
+Likewise, we modify `setFlag(int i, bool v);` in a similar way. We use a `mask` with all '0' but a '1' in the _ith_ position. Then, depending on the value of `bool v`, we set the _ith_ flag to true: 
 ```_flags = _flags | mask;```
 or we set the _ith_ flag to false: 
 ```_flags = _flags & ~mask;```
 
-Take in account that `~mask` is the inverse of `mask`. All '1' but a '0' in the _ith_ position.
+Take in account that `~mask` (NOT mask) is the inverse of `mask`. All '1' but a '0' in the _ith_ position.
 
 
 _Document any limitations this imposes on other possible `MAX_FLAGS` values._
@@ -215,7 +226,7 @@ As we can see, despite having 4 calls to the functions in the if statements, the
 
 The `&&` operand, will return `true` **only if both sides** are `true`. So, once it knows that the left side is already `false`, it returns `false` without checking the right side. Thus, we only execute the call to `func0()` in the first if statement.
 
-Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the right side, `func1()`, is `true` it returns `true` without checking the right side.
+Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the left side, `func1()`, is `true` it returns `true` without checking the right side.
 
 ### Basics 09
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics09.cpp) /
@@ -285,7 +296,7 @@ FunArray& FunArray::operator=(FunArray &&f){
 }
 ```
 
-We recommend to check the cppreference.com website to understand in more detail how the move operations are performed.
+We recommend to check the references above to understand in more detail how the move operations are performed.
 
 ### Basics 11
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics11.cpp) /
@@ -312,7 +323,8 @@ slowThink() + 8 * slowThink() + 8
 ```
 We can see that it will do the multiplication before the sum. We will obtain `(42 + (8*42) + 8)`, instead of the square of '42+8'.
 In order to make sure that it solves first the sum we have to add parenthesis to the macro:
-```SQUARE(x) (x) * (x)```
+
+```#define SQUARE(x) (x) * (x)```
 
 ### Basics 13
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics13.cpp) /
