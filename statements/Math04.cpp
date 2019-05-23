@@ -26,13 +26,14 @@ struct Matrix4x4
     float m[4][4];
 };
 
-//We just happend to see wikipedia: https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_3D_computer_graphics
-//  So we can define this different transforms:
+//Rotation in the X axis
 struct RotationX
 {
+    RotationX (float angle){
+        generateRotMatrix();
+    }
     float angle;
     float rot[3][3];
-    // we should add methods that fill up this matrixes. Like:
     void generateRotMatrix(){
         rot[1][1] = 1;
         /*
@@ -42,8 +43,12 @@ struct RotationX
     }
 };
 
+//Reflection from a plane
 struct Reflection
 {
+    Reflection(Vec3 plane){
+        generateRefMatrix();
+    }
     //symetry plane: ax + by + cz = 0
     Vec3 plane; //vector normal to the symetry plane: {a, b, c}
     float ref[3][3];
