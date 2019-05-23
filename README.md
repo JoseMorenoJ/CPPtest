@@ -70,6 +70,10 @@ As always when learning something, it is better if you try it on your own first.
        - [Basics 13](#basics-13): Unsigned int.
        - [Basics 14](#basics-14): Inheritance.
    2. [Maths](#maths)
+       - [Math 01](#math-01): Within max angle.
+       - [Math 02](#math-02): Rotation of a point.
+       - [Math 03](#math-03): 3D arithmetics.
+       - [Math 04](#math-04): Transforms in 3D space.
    3. [Algorithms](#algorithms)
    4. [Advanced](#advanced)
 
@@ -366,8 +370,75 @@ The problem is that we haven't defined the method `A::baz()` as virtual. So, whe
 
 Basicaly, **in this code**, the definition of `B::baz()` **is useless**.
 
-# Maths
-### Math03
+## Maths
+### Math 01
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math01.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Math01.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Write a function WithinMaxAngle that checks if the angle between two arbitrary vectors is less than MAX_DEGREES._
+
+In order to solve the problem we will use some operations with vectors which are not defined in the C++ library. These functions are:
+   - dot product of 2 vectors (overloading the * operator)
+   ```
+   inline float operator*(const Vec3 &v, const Vec3 &u){ return v.x*u.x + v.y*u.y + v.z*u.z; }
+   ```
+
+   - module of 2 vectors
+   ```
+   inline float module(const Vec3 &v) { return sqrt(v.x*v.x + v.y*v.y + v.z*v.z); }
+   ```
+
+We have defined them as inline functions together with the constant PI (3,1415...).
+
+The problem is to see if the angle between two vectors is within a threshold, in our case 43 degrees.
+
+Now, by definition, the dot product of a vector is equal to the product of the vectors modules and the cosine of the angle between them. Using that, we can obtain the cosine of the angle as the dot product divided by the product of the modules. Thus, the angle will be the arcosine of all that.
+
+Because we defined the operations already, this will fit in one line like this:
+```
+float alpha = acos (v1*v2 / (module(v1)*module(v2)) );
+```
+
+The last thing we do is to convert the angle from radians to degrees and check if it is within our reference agle `MAX_DEGREES`.
+
+### Math 02
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math02.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Math02.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Given an origin O and 2 points A and B in 3D, write a function that calculates the parameters of a rotation that will rotate point A in the direction of point B regarding the origin._
+
+Similarly to the previous problem, we will use the module function and the dot product overloaded operator (*). Also, we will add the following:
+   - substraction of vectors (overloading the - operator)
+   ```
+    inline Vec3 operator-(const Vec3 &v, const Vec3 &u){ 
+        return Vec3 {v.x-u.x, v.y-u.y, v.z-u.z}; 
+    }
+   ```
+   - cross product of two vectors
+   ```
+    inline Vec3 crossProd(const Vec3 &v, const Vec3 &u){ 
+        return Vec3{(v.y*u.z - v.z*u.y), (v.z*u.x - v.x*u.z), (v.x*u.y - v.y*u.x)}; 
+    }
+   ```
+Focusing on the problem, we are asked to obtain the necesary angle to move point `A` to the position of point `B` keeping `O` as the center. This is a rotation, which axis will pass through `O` and will be perpendicular to the triangle formed by the three points (this is always better seen if you draw it).
+So we will use the following vectors, `OA` and `OB`. Note that the vector between two points is just the last point minus the first point.
+
+By definition, the cross product of two vectors is another vector perpendicular to the other two. So, there we have our axis.
+```
+axis = crossProd((a-o), (b-o));
+```
+
+Now, for the angle, we can repeat the operation we used in the previous problem. The angle will be the arcosine of the dot product divided by the product of the modules.
+```
+angle = acos( (a-o)*(b-o) / (module(a-o)*module(b-o) ));
+```
+
+### Math 03
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math03.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Math03.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Given points A and B and a number T, write a function to calculate the position of a point P on the line between A and B with the property |AP| / |AB| = T_
+
 In this problem we start with the assumption that |AP| / |AB| = t.
 
 Also, we know that A, B and P are in the same line. We should be able to deduce from the representation of the points that: AB + BP = AP
@@ -379,3 +450,21 @@ Taking in account that any vector from X to Y (XY) is the same as Y-X. We can so
 Substituting AP in the 2nd equation:
 - AB + BP = t\*AB ==> BP = AB\*t-AB = AB(t-1)
 - BP = P-B ==> __P = AB(t-1) + B__
+
+Which in our code is:
+```
+Vec3 { (b.x-a.x)*(t-1) + b.x,
+       (b.y-a.y)*(t-1) + b.y,
+       (b.z-a.z)*(t-1) + b.z };
+```
+
+### Math 04
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math04.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Math04.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Using the primitives below, write as many type definitions for a transform in 3D space as you can think of._
+_Add comments about the constraints and advantages of each the new types, if any._
+
+I have to admit that I am not sure of what is expected to answer in this problem. It asks you to write transforms in 3D space, [which we can see here what the are](https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_3D_computer_graphics), but I am not sure on the format.
+
+I decided to write different structs. A rotation matrix (X axis) and a symetry matrix. I guess you could write different matrixes depending on the rotation axis or even you could write the rotation matrix in 3 axes (the Euler angles) but it seemed like a copy-paste activity without much to learn from it.
