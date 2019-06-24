@@ -10,11 +10,14 @@
 
 void removeK(std::vector<int>& v, unsigned k)
 {
+    //Appartently with MingW the random_device is not properly implemented and it doesn't provide
+    //  a random seed. So you will see the same sequence of numbers deleted all the time.
     std::random_device rd;
-    std::mt19937 rng(rd());
+    std::default_random_engine rng(rd());
+    
     for(int i=0; i<k; i++){
         std::uniform_int_distribution<int> randIndex(0, v.size() - 1);
-        v.erase(v.begin()+randIndex(rng));
+        v.erase(v.begin() + randIndex(rng));
     }
 }
 
