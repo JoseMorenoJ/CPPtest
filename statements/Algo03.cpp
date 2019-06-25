@@ -16,14 +16,20 @@ struct Vertex
 };
 
 //about the complexity: 
-//  this recursive approach will iterate for each adjacent vertex of every adjacent vertex.
-//  increasing at a rate of the square of vertexes
-void DFVisit(Vertex* v, std::vector<Vertex*>& result)
+//  This recursive approach will iterate for each adjacent vertex of every adjacent vertex.
+//      Increasing at a rate of the square of vertexes
+//  Also, we have to take in account the speed of the std::find function which is linear time.
+//      Considering aswell that we are using find in a vector, which is faster than in another container.
+//      Considering also that we are using pointers, that would be slower.
+void DFVisit(Vertex* v, std::vector<Vertex*>& visit)
 {
+    //If it is the first vertex, we add it to the visited vector
+    if (visit.size() == 0) visit.push_back(v);
+    //Then iterate through its adjacent vertex
     for (Vertex* vert : v->m_adjacent){
-        if(std::find(result.begin(), result.end(), vert) == result.end()){
-            result.push_back(vert);
-            DFVisit(vert, result);
+        if(std::find(visit.begin(), visit.end(), vert) == visit.end()){
+            visit.push_back(vert);
+            DFVisit(vert, visit);
         }
     }
 }

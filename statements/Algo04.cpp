@@ -71,6 +71,10 @@ int main(int argc, char* argv[])
     BSTNode *tree2 = BSTGenerate(15);
    
     BSTNode *merged = BSTMerge(tree1, tree2);
-
+    
     BSTPrint(merged);
+
+    //Point out that BSTMerge will merge the tree2 into the tree1. 
+    //  It will not create a new tree with the merge.
+    std::cout << "merged:" << merged << " tree1:" << tree1 << std::endl;
 }
