@@ -6,10 +6,19 @@
 
 #include <iostream>
 #include <vector>
+#include <random>
 
 void removeK(std::vector<int>& v, unsigned k)
 {
-    // This vector has it coming...
+    //Appartently with MingW the random_device is not properly implemented and it doesn't provide
+    //  a random seed. So you will see the same sequence of numbers deleted all the time.
+    std::random_device rd;
+    std::default_random_engine rng(rd());
+    
+    for(int i=0; i<k; i++){
+        std::uniform_int_distribution<int> randIndex(0, v.size() - 1);
+        v.erase(v.begin() + randIndex(rng));
+    }
 }
 
 int main(int argc, char* argv[])
