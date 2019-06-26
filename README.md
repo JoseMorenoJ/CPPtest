@@ -39,14 +39,20 @@ This release contains the solution for the "Basics" problems. It has the explana
 
 Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.1-Basics.zip).
 
+### v.2 : Maths
+This release contains the solution for the "Basics" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
+
+Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.2-Maths.zip).
+
 ### Next releases
 There will be a release for every kind of problem. Each release will also have the content of the previous versions.
 
 # In Progress
 This is what we are doing now:
-   - Review the explanations for the Basic problems to be ready to merge the Math problems.
-   - Review the code of the Math solutions: Take another look on the last of the problems.
-   - Finish solving the other branches. Advanced and Algorithms.
+   - Review the explanations of Basics and Math.
+   - Finish the Algorithm explanations.
+   - Finish the Advance problems, double check them and merge the branch.
+   - Then, comment the solutions of advance aswell.
 
 # Solutions
 In this section you will find the explanations to the solutions. You will also have a link to the code before and after solving it. We recommend **to have the code open** in another editor/window to follow the solutions easily.
@@ -54,6 +60,7 @@ In this section you will find the explanations to the solutions. You will also h
 As always when learning something, it is better if you try it on your own first.
 
 ## Index
+
    1. [Basics](#basics)
        - [Basics 01](#basics-01): Function template.
        - [Basics 02](#basics-02): Array of array.
@@ -69,13 +76,20 @@ As always when learning something, it is better if you try it on your own first.
        - [Basics 12](#basics-12): Macros.
        - [Basics 13](#basics-13): Unsigned int.
        - [Basics 14](#basics-14): Inheritance.
+
    2. [Maths](#maths)
        - [Math 01](#math-01): Within max angle.
        - [Math 02](#math-02): Rotation of a point.
        - [Math 03](#math-03): 3D arithmetics.
        - [Math 04](#math-04): Transforms in 3D space.
+
    3. [Algorithms](#algorithms)
-   4. [Advanced](#advanced)
+       - [Algorithms 01](#algorithms-01): Fibonacci.
+       - [Algorithms 02](#algorithms-02): Random and vector acces.
+       - [Algorithms 03](#algorithms-03): Graphs.
+       - [Algorithms 04](#algorithms-04): Binary tree.
+
+   4. [Advanced](#advanced) (in progres...)
 
 ## Basics
 ### Basics 01
@@ -468,3 +482,73 @@ _Add comments about the constraints and advantages of each the new types, if any
 I have to admit that I am not sure of what is expected to answer in this problem. It asks you to write transforms in 3D space, [which we can see here what the are](https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_3D_computer_graphics), but I am not sure on the format.
 
 I decided to write different structs. A rotation matrix (X axis) and a symetry matrix. I guess you could write different matrixes depending on the rotation axis or even you could write the rotation matrix in 3 axes (the Euler angles) but it seemed like a copy-paste activity without much to learn from it.
+
+## Algorithms
+### Algorithms 01
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo01.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Algo01.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Consider the following sequence : 0,1,1,2,3,5,8,13,21,34,55,89,144..._
+_Write an iterative function to return the nth element of the sequence._
+
+The famous fibonacci sequence.
+
+We have implemented the sequence in a recursively manner. We call the function with the element that we want to retrieve. We will return the sum of the previous 2 elements of the sequence. There it is the recursiveness.
+
+```
+int fibonacci(int n){
+    return fibonacci(n-1) + fibonacci(n-2);
+}
+```
+
+But then, if we leave it like this, we will never get out of the loop. We need to specify in the function when it should stop calling itself. In this case, if we want the first or the second number, there are no 2 previous numbers. That would be when we return just '0' for the first or '1' for the second.
+
+Leaving the function like this:
+```
+int fibonacci(int n){
+    if (n == 1) return 0;
+    else if (n == 2) return 1;
+    else if (n > 2){
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+}
+```
+
+### Algorithms 02
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo02.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Algo02.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Write a function that removes K random elements from a std::vector as efficiently as you can._
+_The function should work in place, but does not need to preserve the order of elements._
+
+
+
+
+
+
+### Algorithms 03
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo03.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Algo03.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Given the struct Vertex, representing vertices in a graph, write a function DFVisit() that traverses the graph and fills_
+_the vector result with all connected vertices in Depth First order. Write a comment with the time complexity of your implementation._
+
+
+
+
+
+
+### Algorithms 04
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo04.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Algo04.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Given the struct BSTNode which represents a node in a binary search tree, write a function BSTMerge() that will merge the contents of two search trees into one._
+-The function does not need to preserve the contents of the input trees._
+
+
+
+
+
+
+
+_The end..._
