@@ -521,6 +521,18 @@ int fibonacci(int n){
 _Write a function that removes K random elements from a std::vector as efficiently as you can._
 _The function should work in place, but does not need to preserve the order of elements._
 
+#### A comment on the random generation. 
+In order to generate a random number, we use C++'s `std::random_device` and create a random number generator with `std::default_random_engine`. The `std::random_device` acts like the seed for the random number generator.
+
+Apparently, in MingW for Visual Code this is not implemented and the seed for the random numbers is always the same. Therefor the numbers generated randomly are always the same.
+
+#### Back to the problem.
+
+Other that the random generation, the problem doesn't have much to it. we enter a loop where every iteration we will erase an element from the vector using the method `std::vector<int>::erase()`.
+
+As I am writting this explanation, I realized that the function is not very safe. We should check if we have enough elements in the vector before we erase them. Or at least return the error if we run out of elements in the vector.
+
+We will do that in a revision of the code.
 
 
 
