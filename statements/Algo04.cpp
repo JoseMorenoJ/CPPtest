@@ -20,8 +20,8 @@ BSTNode *BSTMerge(BSTNode *tree1, BSTNode *tree2)
     //Recurring call --> end condition:
     //both trees are nullptr
     if (!tree1 && !tree2) return nullptr;
-    //tree2 is nullptr
-    if(!tree2) return tree1;
+    //tree2 is null pointer
+    if (!tree2) return tree1;
     //tree1 is nullptr
     if (!tree1) return tree2;
     
