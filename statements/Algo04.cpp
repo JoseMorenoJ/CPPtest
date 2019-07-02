@@ -18,13 +18,12 @@ struct BSTNode
 BSTNode *BSTMerge(BSTNode *tree1, BSTNode *tree2)
 {
     //Recurring call --> end condition:
-    //both empty
+    //both trees are nullptr
     if (!tree1 && !tree2) return nullptr;
-    //tree1 empty
-    else if(!tree2) return tree1;
-    //tree1 is null pointer
+    //tree2 is nullptr
     else if (!tree2) return tree1;
-    
+    //tree1 is nullptr
+    if (!tree1) return tree2;
     //Update the data:
     tree1->m_data += tree2->m_data;
 
