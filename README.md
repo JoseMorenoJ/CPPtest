@@ -584,7 +584,7 @@ merged tree:     O
 
 And, a priori, we don't care about the values of the nodes.
 
-The function in charge of the merge is call BSTMerge and it will recurringly call itself as it goes deeper into the binary tree. Every time you call it, it will call the itself with each side of the node:
+The function in charge of the merge is call BSTMerge and it will recursively call itself as it goes deeper into the binary tree. Every time you call it, it will call the itself with each side of the node:
 
 ```
 //Continue merging left and right side
@@ -592,7 +592,13 @@ The function in charge of the merge is call BSTMerge and it will recurringly cal
     tree1->m_right = BSTMerge(tree1->m_right, tree2->m_right);
 ```
 
-We discovered a mistake in the Algo04 so we will continue the explanation after patching it.
+In order to get stop the recursive call, we define that: 
+   - if both BSTNode that we try to merge are `nullptr`, we return `nullptr`.
+   - if tree2 is `nullptr`, then tree1 must not be `nullptr` so we return tree1.
+   - if tree1 is `nullptr`, then tree2 must not be `nullptr` so we return tree2.
+   - Otherwise, both are not `nullptr` so we merge each of their sides.
+
+Hopefully that makes sense. If it is not clear it always helps to draw a sketch :D
 
 
 _The end..._
