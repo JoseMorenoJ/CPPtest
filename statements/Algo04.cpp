@@ -21,9 +21,10 @@ BSTNode *BSTMerge(BSTNode *tree1, BSTNode *tree2)
     //both trees are nullptr
     if (!tree1 && !tree2) return nullptr;
     //tree2 is nullptr
-    else if (!tree2) return tree1;
+    if (!tree2) return tree1;
     //tree1 is nullptr
     if (!tree1) return tree2;
+    
     //Update the data:
     tree1->m_data += tree2->m_data;
 
