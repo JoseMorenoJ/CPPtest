@@ -18,9 +18,13 @@ struct BSTNode
 BSTNode *BSTMerge(BSTNode *tree1, BSTNode *tree2)
 {
     //Recurring call --> end condition:
-    if(!tree1) return tree2;
+    //both trees are nullptr
+    if (!tree1 && !tree2) return nullptr;
+    //tree2 is nullptr
     if(!tree2) return tree1;
-
+    //tree1 is nullptr
+    if (!tree1) return tree2;
+    
     //Update the data:
     tree1->m_data += tree2->m_data;
 
@@ -69,11 +73,9 @@ int main(int argc, char* argv[])
 {
     BSTNode *tree1 = BSTGenerate(20);
     BSTNode *tree2 = BSTGenerate(15);
-   
+    
     BSTNode *merged = BSTMerge(tree1, tree2);
     
-    BSTPrint(merged);
-
     //Point out that BSTMerge will merge the tree2 into the tree1. 
     //  It will not create a new tree with the merge.
     std::cout << "merged:" << merged << " tree1:" << tree1 << std::endl;
