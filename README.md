@@ -40,9 +40,14 @@ This release contains the solution for the "Basics" problems. It has the explana
 Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.1-Basics.zip).
 
 ### v.2 : Maths
-This release contains the solution for the "Basics" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
+This release contains the solution for the "Maths" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
 
 Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.2-Maths.zip).
+
+### v.3 : Algorithms
+This release contains the solution for the "Algorithms" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
+
+Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.3-Algorithms.zip).
 
 ### Next releases
 There will be a release for every kind of problem. Each release will also have the content of the previous versions.
@@ -535,9 +540,6 @@ As I am writting this explanation, I realized that the function is not very safe
 We will do that in a revision of the code.
 
 
-
-
-
 ### Algorithms 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo03.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Algo03.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -545,10 +547,19 @@ We will do that in a revision of the code.
 _Given the struct Vertex, representing vertices in a graph, write a function DFVisit() that traverses the graph and fills_
 _the vector result with all connected vertices in Depth First order. Write a comment with the time complexity of your implementation._
 
+First, lets go through the function `DFVisit()`. We receive a `struct Vertex` and a vector of visited Vertices. The aim is to run through the vertex's `m_adjacent` vector and add all the vertices that are connected.
 
+For starters, we add the start Vertex to the solution array. Then we loop in a recursive way through the vertices of each `m_adjacent` vector.
 
+In terms of speed, the complexity would be O(n) because we will iterate through each of the n vertices we will have. 
 
+Also, we have to consider the complexity of the of the `std::find()` function which is O(n) for a `std::vector`.
 
+Someone has already studied the performance of the std::find() function with different STL containers ([here](https://medium.com/@gx578007/searching-vector-set-and-unordered-set-6649d1aa7752)). Here he also considers cache misses but it is not using a vector of pointers which will add some complexity to it.
+
+[Here](https://stackoverflow.com/questions/29446796/unique-ptr-vs-class-instance-as-member-variable/31724938#31724938) we have some info about using pointers or using an instance of the struct instead.
+
+In a few words, the speed of the execution is going to be related to the complexity (O(n^2) in our case) and in the memory locality. If we use a vector of pointers to vertices or a vector of vertices we will get different performance.
 
 ### Algorithms 04
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo04.cpp) /
@@ -557,10 +568,32 @@ _the vector result with all connected vertices in Depth First order. Write a com
 _Given the struct BSTNode which represents a node in a binary search tree, write a function BSTMerge() that will merge the contents of two search trees into one._
 -The function does not need to preserve the contents of the input trees._
 
+We have two [binary trees](https://en.wikipedia.org/wiki/Binary_tree) that we want to merge. We have to understand that merging will mean to create the conections between nodes that exist at least in one of the trees. 
 
+As an ASCII example:
 
+```
+tree1:     O       tree2:     O
+          /                    \
+         O                      O
 
+merged tree:     O
+                / \
+               O   O
+```
 
+And, a priori, we don't care about the values of the nodes.
+
+The function in charge of the merge is call BSTMerge and it will recurringly call itself as it goes deeper into the binary tree. Every time you call it, it will call the itself with each side of the node:
+
+```
+//Continue merging left and right side
+    tree1->m_left = BSTMerge(tree1->m_left, tree2->m_left);
+    tree1->m_right = BSTMerge(tree1->m_right, tree2->m_right);
+```
+
+We discovered a mistake in the Algo04 so we will continue the explanation after patching it.
 
 
 _The end..._
+----------------------------------------------------------------------
