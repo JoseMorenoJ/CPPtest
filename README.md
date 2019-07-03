@@ -176,8 +176,7 @@ Thus, we **cannot be sure** that the value stored is going to be the same.
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics05.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics05.cpp) _(_**_ctrl + click_** _to open new in tab)_
 
-_Add code that will make the template function add() work for objects of class Vec3._ 
-_In this case it should call the Vec3::add() method._
+_In the code below, change all C style type-casts to C++ static_cast, dynamic_cast, reinterpret_cast or const_cast, depending on the programmer intent._ 
 
 From [cplusplus.com](http://www.cplusplus.com/doc/tutorial/typecasting/):
 >`dynamic_cast` can only be used with pointers and references to classes (or with void*). Its purpose is to ensure that the result of the type conversion points to a valid complete object of the destination pointer type.
