@@ -17,7 +17,7 @@ struct A
 
 struct B: public A
 {
-    //it will call A() thus, A::initData but not B::initData.
+    //It will implicitly call A() thus, A::initData but not B::initData.
     B() { initData(); }
 
     virtual void initData() { m_data = 6; }

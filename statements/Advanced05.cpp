@@ -27,6 +27,7 @@ private:
     float m_x, m_y, m_z;
 };
 
+//Template overload for Vec3
 template<> Vec3 add(Vec3 a, Vec3 b){
     return a.add(b);
 }

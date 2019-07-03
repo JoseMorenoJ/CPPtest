@@ -24,12 +24,17 @@ public:
     ~A() {}
 
     void* operator new (std::size_t size){
-        return &g_classPool[g_classPoolFreeOffset++ * size];
+        void* ret = &g_classPool[g_classPoolFreeOffset++ * size];
+        std::cout << "A::new() >" << ret << "<" << std::endl;
+        return ret;
+
     }
 
     void operator delete (void* ptr){
+        std::cout << "A::delete() >" << ptr << "<" << std::endl;
         ptr = nullptr;
         g_classPoolFreeOffset--;
+        return;
     }
 
     int getData() { return m_data; }
@@ -40,19 +45,11 @@ private:
 int main(int argc, char* argv[])
 {
     A* obj = new A();
-
-    std::cout << g_classPool << std::endl;
-    std::cout << obj << std::endl;
-    
     int *pi = new int(5);
-
-    std::cout << obj << std::endl;
+    
+    std::cout << obj->getData() << std::endl;
     std::cout << *pi << std::endl;
-
-    delete obj;
-
-    obj = new A();
-    std::cout << obj << std::endl;
+    
     delete pi;
     delete obj;
 
