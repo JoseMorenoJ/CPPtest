@@ -2,13 +2,16 @@
     
     Fix the macro SQUARE to return the intended result in all cases.
     How can you make the program run twice as fast while still producing the same result?
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
 #include <chrono>
 #include <thread>
 
-#define SQUARE(x) (x) * (x)
+#define SQUARE(x) (x) * (x) //We just need to add some parenthesis to avoid the operator hierarchy 
+                            //  chagning the order of the operations.
 
 int slowThink()
 {

@@ -2,6 +2,8 @@
     
     Given the struct BSTNode which represents a node in a binary search tree, write a function BSTMerge() that will merge the contents of two search trees into one.
     The function does not need to preserve the contents of the input trees.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
@@ -73,10 +75,8 @@ int main(int argc, char* argv[])
 {
     BSTNode *tree1 = BSTGenerate(20);
     BSTNode *tree2 = BSTGenerate(15);
-    
+
     BSTNode *merged = BSTMerge(tree1, tree2);
-    
-    //Point out that BSTMerge will merge the tree2 into the tree1. 
-    //  It will not create a new tree with the merge.
-    std::cout << "merged:" << merged << " tree1:" << tree1 << std::endl;
+
+    BSTPrint(merged);
 }

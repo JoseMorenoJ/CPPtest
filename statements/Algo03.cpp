@@ -3,11 +3,11 @@
     Given the struct Vertex, representing vertices in a graph, write a function DFVisit() that traverses the graph and fills 
     the vector result with all connected vertices in Depth First order. Write a comment with the time complexity of your implementation.
     
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
 #include <vector>
-#include <set>
 #include <algorithm>
 
 struct Vertex
@@ -17,10 +17,10 @@ struct Vertex
 
 //about the complexity: 
 //  This recursive approach will iterate for each adjacent vertex of every adjacent vertex.
-//      Increasing at a rate of the square of vertexes
+//      Increasing at a rate of the square of vertexes. O(N^2).
 //  Also, we have to take in account the speed of the std::find function which is linear time.
-//      Considering aswell that we are using find in a vector, which is faster than in another container.
-//      Considering also that we are using pointers, that would be slower.
+//      Considering aswell that we are using find in a vector, which is faster than any other container.
+//      Considering also that we are using pointers, that would make it slower.
 void DFVisit(Vertex* v, std::vector<Vertex*>& visit)
 {
     //If it is the first vertex, we add it to the visited vector

@@ -3,6 +3,15 @@
     Rewrite the implementation of the class Flags so it is more memory efficient for the given value of MAX_FLAGS
 	(without using any external container classes from the STL).
     Document any limitations this imposes on other possible MAX_FLAGS values.
+
+    --> Because MAX_FLAGS is 32, same number of bits in an int I will redefine the array of bool in a single int.
+    --> Also redefine the operations getFlag() and setFlag().
+    --> This implementation should use less memory but:
+    -->     if we need to increase the number of MAX_FLAGS, we cannot use the int anymore.
+    -->     it might no be so easy to maintain.
+    -->     it is platform dependent now, not always an int is 32 bits.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
@@ -13,24 +22,27 @@ class Flags
 public:
     static const int MAX_FLAGS = 32;
 
-    Flags():_flags(0) {}
+    Flags(): m_flags(0) {} //we initialize it to 0;
 
-    bool getFlag(int i) { 
+    bool getFlag(int i)         
+    { 
         unsigned int mask = (1 << i); //a '1' bit in the ith position
-        return mask & _flags;
+        return mask & m_flags;
     }
-    void setFlag(int i, bool v) {
-        unsigned int mask = (1 << i); 
+    void setFlag(int i, bool v) 
+    { 
         std::cout << i << std::endl; //debug
+        unsigned int mask = (1 << i); 
         if (v){
-            _flags = _flags | mask; //add the '1' of the mask
+            m_flags = m_flags | mask; //add the '1' of the mask
         }
         else{
-            _flags = _flags & ~mask; //reset the '1' of the mask
+            m_flags = m_flags & ~mask; //reset the '1' of the mask
         }
     }
+
 private:
-    unsigned int _flags; //each bit is a flag
+    unsigned int m_flags;
 };
 
 

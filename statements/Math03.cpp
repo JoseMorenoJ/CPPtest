@@ -1,6 +1,8 @@
 /*  C++ Maths 3
     
     Given points A and B and a number T, write a function to calculate the position of a point P on the line between A and B with the property |AP| / |AB| = T 
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>

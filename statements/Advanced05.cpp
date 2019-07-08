@@ -2,6 +2,9 @@
     
     Add code that will make the template function add() work for objects of class Vec3. 
     In this case it should call the Vec3::add() method.
+    --> We overload the Template function for a type: Vec3 template<> Vec3 add(Vec3 a, Vec3 b);
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>

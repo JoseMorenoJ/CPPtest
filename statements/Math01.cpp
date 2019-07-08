@@ -1,6 +1,8 @@
 /*  C++ Maths 1
     
     Write a function WithinMaxAngle that checks if the angle between two arbitrary vectors is less than MAX_DEGREES.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
@@ -12,13 +14,13 @@ struct Vec3
 };
 
 const double PI = 3.14159265358;
+const float MAX_DEGREES = 43.f;
 
-//dot product of 2 vectors
+//Helper vector operations:
+//  dot product of 2 vectors
 inline float operator*(const Vec3 &v, const Vec3 &u){ return v.x*u.x + v.y*u.y + v.z*u.z; }
-//module of 2 vectors
+//  module of 2 vectors
 inline float module(const Vec3 &v) { return sqrt(v.x*v.x + v.y*v.y + v.z*v.z); }
-
-const float MAX_DEGREES = 43.f; 
 
 bool WithinMaxAngle(const Vec3 &v1, const Vec3 &v2)
 {

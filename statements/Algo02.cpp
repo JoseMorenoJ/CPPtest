@@ -2,6 +2,8 @@
     
     Write a function that removes K random elements from a std::vector as efficiently as you can. 
     The function should work in place, but does not need to preserve the order of elements.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>

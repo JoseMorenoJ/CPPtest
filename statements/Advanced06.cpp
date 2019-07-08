@@ -3,6 +3,8 @@
     The method Entity::PerceptSurroundings() runs an order of magnitude slower than it should.
     Fix the performance problems.
 	Hint: There are 5 problems in total, of which 2 are logical, 2 are language specific and 1 is mathematical in nature.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
@@ -46,18 +48,17 @@ void Entity::PerceptSurroundings(std::vector<Entity*> allObjects)
 
     for (unsigned i = 0; i < allObjects.size(); ++i)
     {
-//ERROR language: you will destroy the m_perceptedObjects contents of every object in allObjects
-//              after every iteration. It gets out of scope and it destroys it.
+//ERROR language: it creates objectToCheck unnecessarily, it can use allObjects[i].
         Entity objectToCheck = *allObjects[i];
 //ERROR logic: check this at the begining. Before the loop, after the clear.
         if (!m_blind)
         {
             float distance = DistanceTo(objectToCheck);
 //ERROR logic: we should check m_perceptible before calculating the distance to it.
-//              and only consider those elements.                
-            if (distance < PERCEPTION_RANGE && objectToCheck.m_perceptible)
+//              and only consider those elements.
+            if (distance < PERCEPTION_RANGE && 
+                objectToCheck.m_perceptible)
             {
-//ERROR language: you create a local object and then use the more global object (allObjects[i])?
                 m_perceptedObjects.push_back(allObjects[i]);
             }
         }
@@ -82,7 +83,6 @@ int main(int argc, char* argv[])
 
     std::cout << "Number of objects the player can see: " << player.GetPerceptedObjects().size() << std::endl;
 
-    // this is redundant, by the way.
     for (int i = 0; i < 50; ++i)
         delete objects[i];
 

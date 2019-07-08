@@ -1,6 +1,11 @@
 /*  C++ Basics 8
     
     Write a comment explaining the output of the code below
+    
+    --> The && operand will not evaluate the right side if the left side is already false.
+    --> The || operand will not evaluate the right side if the left side is aleady true.
+
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
@@ -22,8 +27,9 @@ int main(int argc, char* argv[])
 
 	return 0;
 }
-/* Output:
-    Func0
-    Func1
-    Main1
-*/
+/*
+OUTPUT:
+Func0
+Func1
+Main1
+ */

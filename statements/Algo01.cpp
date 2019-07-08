@@ -3,6 +3,7 @@
     Consider the following sequence : 0,1,1,2,3,5,8,13,21,34,55,89,144...
     Write an iterative function to return the nth element of the sequence.
 
+    José Moreno 06 July 2019
 */
 
 #include <iostream>
