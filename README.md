@@ -3,6 +3,8 @@ A C++ knowledge test given to me from a company during the selection procces for
 
 When I received it I didn't have much experience with C++ or as a developer, moreover, they rejected me. I had 6 hours to do as much as I could but, still today, I am not sure if they were expecting me (or the selected candidate) to finish all the exercises.
 
+EDIT: I repeated the test 6 months later and I have to say that I nailed it. More importantly, I understand everything that is happening in every solution.
+
 ## What to find in this repo?
 Go straight to the [explanation](#solutions) of the problems.
 When I did the test, I failed big time. But I also learnt about what was expected from me as a candidate. In this repo I will repeat the test, exercise by exercise, explaining the solutions the best I can. Maybe even showing alternative solutions.
@@ -28,6 +30,9 @@ The work in the code will be done in the specific branches:
 
 All the branches will merge with **master** once they are solved. Also, the explanations are in the README file which will be edited from the master branch.
 
+### End of proyect
+Once the Advanced branch merged and all the problems solved, we will not work in those branches anymore. We will just correct whatever minor correction we see in the **master** branch. 
+
 ## Releases
 ### v.0 : Statements
 This release contains the Statements as they were, before solving them. Although the changes in the general structure are added also to this version and it will be updated with the changes as we develop the other branches. 
@@ -49,15 +54,18 @@ This release contains the solution for the "Algorithms" problems. It has the exp
 
 Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.3-Algorithms.zip).
 
+### v.4 : Advanced
+This release contains the solution for the "Advanced" problems. It has the explanation in the README.md file and the problems in the Statements folder are solved.
+
+Get the zip file with the [statements](https://github.com/JoseMorenoJ/CPPtest/archive/v.4-Advanced.zip).
+
 ### Next releases
-There will be a release for every kind of problem. Each release will also have the content of the previous versions.
+v.4: Advanced is the last release. There will only be corrections to the solutions. 
 
 # In Progress
 This is what we are doing now:
-   - Review the explanations of Basics and Math.
-   - Finish the Algorithm explanations.
-   - Finish the Advance problems, double check them and merge the branch.
-   - Then, comment the solutions of advance aswell.
+   - Finish writting the Advanced explanations.
+   - Reviewing in general all the solutions and explanations to correct minor bugs.
 
 # Solutions
 In this section you will find the explanations to the solutions. You will also have a link to the code before and after solving it. We recommend **to have the code open** in another editor/window to follow the solutions easily.
@@ -94,7 +102,13 @@ As always when learning something, it is better if you try it on your own first.
        - [Algorithms 03](#algorithms-03): Graphs.
        - [Algorithms 04](#algorithms-04): Binary tree.
 
-   4. [Advanced](#advanced) (in progres...)
+   4. [Advanced](#advanced)
+       - [Algorithms 01](#advanced-01): Constructor calls.
+       - [Algorithms 02](#advanced-02): Overwriting new and delete.
+       - [Algorithms 03](#advanced-03): Debug: Breaks in memory positions.
+       - [Algorithms 04](#advanced-04): Comma operator.
+       - [Algorithms 05](#advanced-05): Overwriting template cases.
+       - [Algorithms 06](#advanced-06): Performance analysis.
 
 ## Basics
 ### Basics 01
@@ -112,6 +126,8 @@ T sumArray(T *a, int count) {...}
 ```
 
 We must leave `count` as an `int` because it is the size of the array which is always going to be an integer value independently of the array type.
+
+([_index_](#index))
 
 ### Basics 02
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics02.cpp) /
@@ -143,6 +159,8 @@ We are using the [fill constructor](http://www.cplusplus.com/reference/vector/ve
 
 As we didn't specify any value in the vector of size 8, it will initialize each element with 0.
 
+([_index_](#index))
+
 ### Basics 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics03.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics03.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -162,6 +180,8 @@ The problem here, is that we have an object of the class B in the variable `some
 
 Specifying the `virtual` in the destructor of `~A()` we make sure that it calls the destructor of `~B()` aswell.
 
+([_index_](#index))
+
 ### Basics 04
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics04.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics04.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -171,6 +191,8 @@ _Write a comment explaining the problem with the code below._
 Well, that problem with the code, as we understand it, is that we define `i` as an alias of whatever the function `func()` returns. And this function returns a variable declared in the scope of `func()`. Meaning, when we come back from `func()` to `main()`, **the memory** used by `i` **is freed** and available to any other function that might need it. 
 
 Thus, we **cannot be sure** that the value stored is going to be the same.
+
+([_index_](#index))
 
 ### Basics 05
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics05.cpp) /
@@ -194,6 +216,8 @@ Keeping those definitions in mind:
 - line 42 `dynamic_cast` and `const_cast`: to make sure that `pa` is treated as a `B*` if it really is an object of type B. Also, we need to make it `non-const` to be able to cast it.
 - line 44 `reinterpret_cast` and `const_cast`: we want to cast a `const` variable so we need the `const_cast`. After that, we want to use it as if it was a pointer to an int. We can only do this with the `reinterpret_cast` because there is no relationship between `int` and `A`.
 
+([_index_](#index))
+
 ### Basics 06
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics06.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics06.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -203,6 +227,8 @@ _Fix the problem with the code below._
 The problem is that `printValuePlus2()` receives a `int*` but then, it doesn't treat it as a pointer but as an `int`. Thus, it adds 2 to the address (which is the value of a pointer).
 
 The solution is as simple as dereferencing the pointer in the `std::cout` statement.
+
+([_index_](#index))
 
 ### Basics 07
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics07.cpp) /
@@ -231,6 +257,8 @@ As a downside, when the number of bits is not exactly the number of flags, this 
 
 Also, this implementation will be system dependent since not all the computers have the same size for all the types.
 
+([_index_](#index))
+
 ### Basics 08
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics08.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics08.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -250,6 +278,8 @@ The `&&` operand, will return `true` **only if both sides** are `true`. So, once
 
 Similarly, with the `||` operand, it will return `true` if **at least one side** is `true`. So, when it knows that the left side, `func1()`, is `true` it returns `true` without checking the right side.
 
+([_index_](#index))
+
 ### Basics 09
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics09.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics09.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -267,6 +297,8 @@ This gets more complex when we move to the next 'auto'. Here we have a lambda fu
 Usually we would leave the auto like that but in order to find an alternative we will use `std::function` (check the [cplusplus reference](http://www.cplusplus.com/reference/functional/function/) if you need). This is a function wrapper, it will get the lambda and make an object that you can copy and pass around the program.
 
 On this case, we might prefer using the `auto` instead but we also propose to use the `std::function` class trying to go a step further on the solution.
+
+([_index_](#index))
 
 ### Basics 10
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics10.cpp) /
@@ -320,6 +352,8 @@ FunArray& FunArray::operator=(FunArray &&f){
 
 We recommend to check the references above to understand in more detail how the move operations are performed.
 
+([_index_](#index))
+
 ### Basics 11
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics11.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics11.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -329,6 +363,8 @@ _Change the definition of class TypePrinter in such a way that it would be impos
 That is the definition a **_pure virtual method_** and in order to make `printClass` pure virtual, we have to **assign it to 0** in addition to use the _virtual_ modifier.
 
 Being pure virtual, the compiler will not allow to not be redefined in a derived class. Thus, it will not use the definition from the base class (because there is no such definition);
+
+([_index_](#index))
 
 ### Basics 12
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics12.cpp) /
@@ -348,6 +384,8 @@ In order to make sure that it solves first the sum we have to add parenthesis to
 
 ```#define SQUARE(x) (x) * (x)```
 
+([_index_](#index))
+
 ### Basics 13
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics13.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Basics13.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -363,6 +401,8 @@ As an example, if we assign -1 to an unsigned int we will obtain the value 42949
 Thus, we can also modify the if statement to check only `(m_Health == 0)` since it will never be lower than '0'.
 
 As an alternative, we can change the type of the `m_Health` and `damage` to be an int.
+
+([_index_](#index))
 
 ### Basics 14
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Basics14.cpp) /
@@ -387,6 +427,8 @@ But,instead of seeing two calls to methods from A and then 2 calls to methods fr
 The problem is that we haven't defined the method `A::baz()` as virtual. So, when the `funcCaller(A* someA)` calls `baz()`, it gets the method from A.
 
 Basicaly, **in this code**, the definition of `B::baz()` **is useless**.
+
+([_index_](#index))
 
 ## Maths
 ### Math 01
@@ -418,6 +460,8 @@ float alpha = acos (v1*v2 / (module(v1)*module(v2)) );
 ```
 
 The last thing we do is to convert the angle from radians to degrees and check if it is within our reference agle `MAX_DEGREES`.
+
+([_index_](#index))
 
 ### Math 02
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math02.cpp) /
@@ -451,6 +495,8 @@ Now, for the angle, we can repeat the operation we used in the previous problem.
 angle = acos( (a-o)*(b-o) / (module(a-o)*module(b-o) ));
 ```
 
+([_index_](#index))
+
 ### Math 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math03.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Math03.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -476,6 +522,8 @@ Vec3 { (b.x-a.x)*(t-1) + b.x,
        (b.z-a.z)*(t-1) + b.z };
 ```
 
+([_index_](#index))
+
 ### Math 04
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Math04.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Math04.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -486,6 +534,8 @@ _Add comments about the constraints and advantages of each the new types, if any
 I have to admit that I am not sure of what is expected to answer in this problem. It asks you to write transforms in 3D space, [which we can see here what the are](https://en.wikipedia.org/wiki/Transformation_matrix#Examples_in_3D_computer_graphics), but I am not sure on the format.
 
 I decided to write different structs. A rotation matrix (X axis) and a symetry matrix. I guess you could write different matrixes depending on the rotation axis or even you could write the rotation matrix in 3 axes (the Euler angles) but it seemed like a copy-paste activity without much to learn from it.
+
+([_index_](#index))
 
 ## Algorithms
 ### Algorithms 01
@@ -518,6 +568,8 @@ int fibonacci(int n){
 }
 ```
 
+([_index_](#index))
+
 ### Algorithms 02
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo02.cpp) /
 [solved](https://josemorenoj.github.io/CPPtest/statements/Algo02.cpp) _(_**_ctrl + click_** _to open new in tab)_
@@ -538,6 +590,7 @@ As I am writting this explanation, I realized that the function is not very safe
 
 We will do that in a revision of the code.
 
+([_index_](#index))
 
 ### Algorithms 03
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo03.cpp) /
@@ -559,6 +612,8 @@ Someone has already studied the performance of the std::find() function with dif
 [Here](https://stackoverflow.com/questions/29446796/unique-ptr-vs-class-instance-as-member-variable/31724938#31724938) we have some info about using pointers or using an instance of the struct instead.
 
 In a few words, the speed of the execution is going to be related to the complexity (O(n^2) in our case) and in the memory locality. If we use a vector of pointers to vertices or a vector of vertices we will get different performance.
+
+([_index_](#index))
 
 ### Algorithms 04
 [unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Algo04.cpp) /
@@ -599,13 +654,53 @@ In order to get stop the recursive call, we define that:
 
 Hopefully that makes sense. If it is not clear it always helps to draw a sketch :D
 
+([_index_](#index))
 
 # Advanced
+### Advanced 01
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced01.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced01.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Fix the problem with the code below. Write a comment explaining the cause._
+
+
+
+([_index_](#index))
+
 ### Advanced 02
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced02.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced02.cpp) _(_**_ctrl + click_** _to open new in tab)_
+_Extend class A in such a way that dynamically allocated instances will be placed inside the memory occupied by g_classPool. Assume instances will be freed in order opposite of the order of creation._
+
+_Write a comment documenting what needs to be added if we want to allocate arrays as well as individual objects._
+
+_Write a comment explaining what needs to be added to the program so that all dynamic allocation uses memory from g_classPool._
+
 About allocating the dynamic memory in a global variable. To do that we need to overload the new and delete operators.
 - Here an interesting [link](http://www.modernescpp.com/index.php/overloading-operator-new-and-delete) about it.
 
+
+([_index_](#index))
+
+### Advanced 03
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced03.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced03.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_You are debugging a program using your usual debugger and it always crashes on the same memory address because it has been corrupted. The problem is that you don't know when it could happen and you don't know what line of source code is causing the crash (and you can't check all the code... That would take too much time)._
+
+_Write a comment explaining the steps you will take in order to find the cause of the problem._
+
+
+
+
+([_index_](#index))
+
 ### Advanced 04
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced04.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced04.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Explain the result of running the program. Explain how its execution will end._
+
 Comma separator. The comma operator (,) is used to separate two or more expressions that are included where only one expression is expected. When the set of expressions has to be evaluated for a value, only the right-most expression is considered.
 
 For example, the following code:
@@ -615,5 +710,33 @@ a = (b=3, b+2);
 would first assign the value 3 to b, and then assign b+2 to variable a. So, at the end, variable a would contain the value 5 while variable b would contain value 3.
 
 
+
+([_index_](#index))
+
+### Advanced 05
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced015.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced05.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_Add code that will make the template function add() work for objects of class Vec3._
+_In this case it should call the Vec3::add() method._
+
+
+
+
+
+([_index_](#index))
+
+### Advanced 06
+[unsolved](https://josemorenoj.github.io/CPPtest/statements/unsolved/Advanced06.cpp) /
+[solved](https://josemorenoj.github.io/CPPtest/statements/Advanced06.cpp) _(_**_ctrl + click_** _to open new in tab)_
+
+_The method Entity::PerceptSurroundings() runs an order of magnitude slower than it should. Fix the performance problems._
+_Hint: There are 5 problems in total, of which 2 are logical, 2 are language specific and 1 is mathematical in nature._
+
+
+
+
+
+([_index_](#index))
 _The end..._
-----------------------------------------------------------------------
+___________________________________________________________________________________________
